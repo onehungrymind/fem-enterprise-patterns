@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotificationService } from './shared/services';
 
+export enum SidenavStatus {
+  OPENED = 'opened',
+  DISABLED = 'disabled',
+  CLOSED = 'closed',
+}
+
 @Component({
   selector: 'fem-root',
   templateUrl: './app.component.html',
@@ -31,6 +37,8 @@ export class AppComponent implements OnInit {
     { path: '/examples/07-slider', name: 'Slider' },
   ];
 
+  sidenavStatus = SidenavStatus.OPENED;
+
   constructor(private snackbar: MatSnackBar, private ns: NotificationService) {}
 
   ngOnInit() {
@@ -45,5 +53,10 @@ export class AppComponent implements OnInit {
 
   logout() {  }
 
-  toggleSidenav() { }
+  toggleSidenav() {
+    this.sidenavStatus =
+      this.sidenavStatus === SidenavStatus.OPENED
+        ? SidenavStatus.CLOSED
+        : SidenavStatus.OPENED;
+  }
 }
