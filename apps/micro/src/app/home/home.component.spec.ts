@@ -30,7 +30,7 @@ describe('HomeComponent', () => {
 
     const mockMode = 'create';
     const mockWidgets = [];
-    const mockWidget = {};
+    const mockWidget = { id: '1', title: 'mock', description: 'mock', price: 100 };
 
     component.reCalculateTotal(mockMode, mockWidgets, mockWidget);
 
@@ -43,18 +43,20 @@ describe('HomeComponent', () => {
   });
 
   it('should call the appropriate method depending on mode in updateWidgets', () => {
+    const mockWidget = { id: '1', title: 'mock', description: 'mock', price: 100 };
+
     spyOn(component, 'addWidget').and.callThrough();
     spyOn(component, 'updateWidget').and.callThrough();
     spyOn(component, 'deleteWidget').and.callThrough();
 
-    component.updateWidgets('create', [], {});
-    expect(component.addWidget).toHaveBeenCalledWith([], {});
+    component.updateWidgets('create', [], mockWidget);
+    expect(component.addWidget).toHaveBeenCalledWith([], mockWidget);
 
-    component.updateWidgets('update', [], {});
-    expect(component.updateWidget).toHaveBeenCalledWith([], {});
+    component.updateWidgets('update', [], mockWidget);
+    expect(component.updateWidget).toHaveBeenCalledWith([], mockWidget);
 
-    component.updateWidgets('delete', [], {});
-    expect(component.deleteWidget).toHaveBeenCalledWith([], {});
+    component.updateWidgets('delete', [], mockWidget);
+    expect(component.deleteWidget).toHaveBeenCalledWith([], mockWidget);
   });
 
   it('should add a widget on addWidget', () => {

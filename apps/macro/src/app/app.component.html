@@ -1,6 +1,4 @@
-<fem-toolbar
-  (logout)="logout()"
-  (toggleSidenav)="toggleSidenav()">
+<fem-toolbar (logout)="logout()" (toggleSidenav)="toggleSidenav()">
 </fem-toolbar>
 
 <mat-sidenav-container>
@@ -12,14 +10,27 @@
         </a>
       </span>
       <mat-divider></mat-divider>
+      <h1 matSubheader>Concepts</h1>
       <mat-nav-list>
         <mat-list-item
-          *ngFor="let link of links"
-          [routerLink]="link.path"
+          *ngFor="let concept of concepts"
+          [routerLink]="concept.path"
           routerLinkActive="active"
+          attr.data-cy="nav-item-{{ concept.name }}"
         >
-          <mat-icon matListIcon>{{ link.icon }}</mat-icon>
-          {{ link.title | uppercase }}
+          {{ concept.name | uppercase }}
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-divider></mat-divider>
+      <h1 matSubheader>Examples</h1>
+      <mat-nav-list>
+        <mat-list-item
+          *ngFor="let example of examples"
+          [routerLink]="example.path"
+          routerLinkActive="active"
+          attr.data-cy="nav-item-{{ example.name }}"
+        >
+          {{ example.name | uppercase }}
         </mat-list-item>
       </mat-nav-list>
     </ng-container>

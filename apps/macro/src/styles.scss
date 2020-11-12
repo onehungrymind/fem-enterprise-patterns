@@ -82,6 +82,7 @@ mat-card {
 
 .container {
   flex: 1 1 100%;
+  padding: 20px;
 }
 
 .home-container {
@@ -198,4 +199,43 @@ mat-toolbar {
 
 .no-wrap {
   white-space: nowrap;
+}
+
+.ball {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-image: radial-gradient(orange, red);
+}
+.pin {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: transparent url('assets/pin.png') no-repeat;
+  background-size: contain;
+}
+.spaceship {
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: transparent url('assets/spaceship.png') no-repeat;
+  background-size: contain;
+}
+.circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-image: radial-gradient(#DDD, white);
+  pointer-events: none;
+}
+app-circle {
+  position: absolute;
+}
+app-shot {
+  position: absolute;
 }

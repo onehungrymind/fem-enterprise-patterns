@@ -1,0 +1,28 @@
+mat-card {
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  margin: 16px;
+  overflow: hidden;
+}
+
+mat-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slide-wrapper {
+  height: 50vw;
+  max-height: 500px;
+}
+
+.slide {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  right: 24px;
+  left: 24px;
+}

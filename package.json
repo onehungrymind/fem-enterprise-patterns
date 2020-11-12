@@ -50,6 +50,8 @@
     "@nestjs/platform-express": "^7.0.0",
     "@nrwl/angular": "10.3.3",
     "concurrently": "^5.3.0",
+    "gsap": "^3.5.1",
+    "jquery": "^3.5.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
     "uuid": "^8.3.1",

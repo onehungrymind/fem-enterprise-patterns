@@ -1,0 +1,18 @@
+<div class="card-container">
+  <mat-card>
+    <button #previous mat-raised-button color="accent">Previous</button>
+    <button #next mat-raised-button color="accent">Next</button>
+  </mat-card>
+  <mat-card>
+    <div class="slide-wrapper">
+      <div *ngFor="let image of images; let i = index">
+        <div
+          class="slide"
+          *ngIf="i === currentPosition.index"
+          [@imageChange]="currentPosition.direction"
+          [style.background-image]="'url(' + image + ')'"
+        ></div>
+      </div>
+    </div>
+  </mat-card>
+</div>
