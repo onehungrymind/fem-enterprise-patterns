@@ -35,6 +35,26 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "micro": {
+      "tags": []
+    },
+    "micro-e2e": {
+      "tags": [],
+      "implicitDependencies": ["micro"]
+    },
+    "meso": {
+      "tags": []
+    },
+    "meso-e2e": {
+      "tags": [],
+      "implicitDependencies": ["meso"]
+    },
+    "material": {
+      "tags": []
+    },
+    "ui-toolbar": {
+      "tags": []
     }
   }
 }

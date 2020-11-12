@@ -22,7 +22,10 @@
             "tsConfig": "apps/macro/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/macro/src/favicon.ico", "apps/macro/src/assets"],
-            "styles": ["apps/macro/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/macro/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -197,6 +200,304 @@
             "jestConfig": "libs/api-interfaces/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "micro": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/micro",
+      "sourceRoot": "apps/micro/src",
+      "prefix": "fem",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/micro",
+            "index": "apps/micro/src/index.html",
+            "main": "apps/micro/src/main.ts",
+            "polyfills": "apps/micro/src/polyfills.ts",
+            "tsConfig": "apps/micro/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/micro/src/favicon.ico", "apps/micro/src/assets"],
+            "styles": ["apps/micro/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/micro/src/environments/environment.ts",
+                  "with": "apps/micro/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "micro:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "micro:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "micro:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/micro/tsconfig.app.json",
+              "apps/micro/tsconfig.spec.json",
+              "apps/micro/tsconfig.editor.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/micro/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/micro/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "micro-e2e": {
+      "root": "apps/micro-e2e",
+      "sourceRoot": "apps/micro-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/micro-e2e/cypress.json",
+            "tsConfig": "apps/micro-e2e/tsconfig.e2e.json",
+            "devServerTarget": "micro:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "micro:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/micro-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/micro-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "meso": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/meso",
+      "sourceRoot": "apps/meso/src",
+      "prefix": "fem",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/meso",
+            "index": "apps/meso/src/index.html",
+            "main": "apps/meso/src/main.ts",
+            "polyfills": "apps/meso/src/polyfills.ts",
+            "tsConfig": "apps/meso/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/meso/src/favicon.ico", "apps/meso/src/assets"],
+            "styles": ["apps/meso/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/meso/src/environments/environment.ts",
+                  "with": "apps/meso/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "meso:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "meso:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "meso:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/meso/tsconfig.app.json",
+              "apps/meso/tsconfig.spec.json",
+              "apps/meso/tsconfig.editor.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/meso/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/meso/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "meso-e2e": {
+      "root": "apps/meso-e2e",
+      "sourceRoot": "apps/meso-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/meso-e2e/cypress.json",
+            "tsConfig": "apps/meso-e2e/tsconfig.e2e.json",
+            "devServerTarget": "meso:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "meso:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/meso-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/meso-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "material": {
+      "projectType": "library",
+      "root": "libs/material",
+      "sourceRoot": "libs/material/src",
+      "prefix": "fem",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/material/tsconfig.lib.json",
+              "libs/material/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/material/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/material/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-toolbar": {
+      "projectType": "library",
+      "root": "libs/ui-toolbar",
+      "sourceRoot": "libs/ui-toolbar/src",
+      "prefix": "fem",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-toolbar/tsconfig.lib.json",
+              "libs/ui-toolbar/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-toolbar/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-toolbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }
