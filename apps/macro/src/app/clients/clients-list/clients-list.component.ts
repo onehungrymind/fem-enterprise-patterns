@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Client } from '../../shared/models/client.model';
 
 @Component({
-  selector: 'app-clients-list',
+  selector: 'fem-clients-list',
   templateUrl: './clients-list.component.html',
-  styleUrls: ['./clients-list.component.css']
+  styleUrls: ['./clients-list.component.scss']
 })
 export class ClientsListComponent {
   @Input() clients: Client[];

@@ -6,9 +6,9 @@ import { Store } from '../shared/services/';
 import * as ClientActions from '../shared/actions/client.actions';
 
 @Component({
-  selector: 'app-clients',
+  selector: 'fem-clients',
   templateUrl: './clients.component.html',
-  styleUrls: ['./clients.component.css']
+  styleUrls: ['./clients.component.scss']
 })
 export class ClientsComponent implements OnInit {
   clients$: Observable<Client[]>;

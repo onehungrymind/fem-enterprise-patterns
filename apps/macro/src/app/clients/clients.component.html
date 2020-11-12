@@ -1,13 +1,13 @@
-<div fxLayout="column">
-  <app-client-details
+<div fxLayout="row">
+  <fem-client-details
     [client]="currentClient$ | async"
     (saved)="saveClient($event)"
     (cancelled)="cancel()">
-  </app-client-details>
+  </fem-client-details>
 
-  <app-clients-list
+  <fem-clients-list
     [clients]="clients$ | async"
     (selected)="setCurrentClient($event)"
     (deleted)="deleteClient($event)">
-  </app-clients-list>
+  </fem-clients-list>
 </div>

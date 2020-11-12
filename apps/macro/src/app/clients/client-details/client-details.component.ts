@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Client } from '../../shared/models/client.model';
 
 @Component({
-  selector: 'app-client-details',
+  selector: 'fem-client-details',
   templateUrl: './client-details.component.html',
-  styleUrls: ['./client-details.component.css']
+  styleUrls: ['./client-details.component.scss']
 })
 export class ClientDetailsComponent {
   originalName;

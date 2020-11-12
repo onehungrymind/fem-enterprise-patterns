@@ -12,11 +12,11 @@ declare const ace: any;
 @Component({
   selector: 'fem-demo',
   templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.css']
+  styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent implements OnInit {
-  @ViewChild('stepEditor') stepEditor;
-  @ViewChild('cycleEditor') cycleEditor;
+  @ViewChild('stepEditor', {static: true}) stepEditor;
+  @ViewChild('cycleEditor', {static: true}) cycleEditor;
 
   actions = [
     {type: '[Client] Select', payload: {id: '1', firstName: 'John', lastName: 'Doe', company: 'Acme, Inc'}},
