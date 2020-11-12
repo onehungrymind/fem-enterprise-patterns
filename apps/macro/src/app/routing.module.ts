@@ -25,8 +25,10 @@ import {
   SliderComponent
 } from './examples';
 
+import { ClientsComponent } from './clients/clients.component';
+
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: ClientsComponent },
   {path: 'concepts/00-basic-sequence', component: BasicSequenceComponent},
   {path: 'concepts/01-maintaining-state', component: MaintainingStateComponent},
   {path: 'concepts/02-merging-streams', component: MergingStreamsComponent},
