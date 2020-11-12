@@ -12,18 +12,18 @@
   </mat-card-header>
   <mat-card-content>
     <form #formRef="ngForm">
-      <mat-input-container class="full-width">
+      <mat-form-field class="full-width">
         <input matInput placeholder="First Name" required
                [(ngModel)]="currentClient.firstName" type="text" name="firstName">
-      </mat-input-container>
-      <mat-input-container class="full-width">
+      </mat-form-field>
+      <mat-form-field class="full-width">
         <input matInput placeholder="Last Name" required
                [(ngModel)]="currentClient.lastName" type="text" name="lastName">
-      </mat-input-container>
-      <mat-input-container class="full-width">
+      </mat-form-field>
+      <mat-form-field class="full-width">
         <input matInput placeholder="Company"
                [(ngModel)]="currentClient.company" type="text" name="company">
-      </mat-input-container>
+      </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions>

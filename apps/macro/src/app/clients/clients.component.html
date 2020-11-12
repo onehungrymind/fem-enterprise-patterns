@@ -2,7 +2,7 @@
   <app-client-details
     [client]="currentClient$ | async"
     (saved)="saveClient($event)"
-    (cancelled)="cancel($event)">
+    (cancelled)="cancel()">
   </app-client-details>
 
   <app-clients-list

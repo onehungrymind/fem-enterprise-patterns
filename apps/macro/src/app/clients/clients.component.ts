@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../shared/models/client.model';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Store } from '../shared/services/';
 
 import * as ClientActions from '../shared/actions/client.actions';

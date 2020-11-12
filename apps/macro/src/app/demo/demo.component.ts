@@ -6,6 +6,7 @@ import 'brace/theme/eclipse';
 import 'brace/mode/json';
 import 'brace/ext/language_tools.js';
 import { interval, from, Observable, zip } from 'rxjs';
+import { zip as zipOp } from 'rxjs/operators';
 declare const ace: any;
 
 @Component({
@@ -96,9 +97,8 @@ export class DemoComponent implements OnInit {
 
   dispatchCycle(rawActions) {
     const actions = JSON.parse(rawActions);
-    const result = Observable
-      .from(actions)
-      .zip(interval(this.timerInterval), (a, b) => a)
+    const result = from(actions)
+      .pipe(zipOp(interval(this.timerInterval), (a, b) => a))
     ;
 
     result.subscribe((action: any) => this.store.dispatch(action));
