@@ -31,8 +31,10 @@ export class InputComponent implements OnInit {
   queryString;
 
   ngOnInit() {
-    this.searchControl.valueChanges
-      .pipe(map(query => query.toUpperCase()))
-      .subscribe(query => this.queryString = query);
+    this.searchControl.valueChanges // initial output
+      .pipe(
+        map(query => query.toUpperCase())
+      )
+      .subscribe(query => this.queryString = query); // final input
   }
 }

@@ -49,7 +49,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule,
+    MatStepperModule
   ]
 })
 export class MaterialModule {}

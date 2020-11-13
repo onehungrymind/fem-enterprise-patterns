@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/apps/meso',
     '<rootDir>/libs/material',
     '<rootDir>/libs/ui-toolbar',
+    '<rootDir>/apps/mega',
   ],
 };

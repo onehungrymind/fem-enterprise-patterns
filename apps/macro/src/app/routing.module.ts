@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 
 import {
   BasicSequenceComponent,
@@ -26,7 +25,7 @@ import {
 } from './examples';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: BasicSequenceComponent },
   {path: 'concepts/00-basic-sequence', component: BasicSequenceComponent},
   {path: 'concepts/01-maintaining-state', component: MaintainingStateComponent},
   {path: 'concepts/02-merging-streams', component: MergingStreamsComponent},

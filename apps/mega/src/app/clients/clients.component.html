@@ -1,0 +1,13 @@
+<div fxLayout="row">
+  <fem-client-details
+    [client]="currentClient$ | async"
+    (saved)="saveClient($event)"
+    (cancelled)="cancel()">
+  </fem-client-details>
+
+  <fem-clients-list
+    [clients]="clients$ | async"
+    (selected)="setCurrentClient($event)"
+    (deleted)="deleteClient($event)">
+  </fem-clients-list>
+</div>

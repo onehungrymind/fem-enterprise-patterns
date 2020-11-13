@@ -1,0 +1,39 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "company": "Acme, Inc"
+    },
+    {
+      "id": "2",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "company": "Super, Inc"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "First Project",
+      "description": "Cash cow!",
+      "client_id": "1"
+    },
+    {
+      "id": 2,
+      "name": "Second Project",
+      "description": "Gravy train!",
+      "client_id": "2"
+    }
+  ],
+  "action": { "type": "[Client] Select", "payload": { "id": "1", "firstName": "John", "lastName": "Doe", "company": "Acme, Inc"}},
+  "actions": [
+    { "type": "[Client] Select", "payload": { "id": "1", "firstName": "John", "lastName": "Doe", 	"company": "Acme, Inc"}},
+    { "type": "[Client] Select", "payload": { "id": "2", "firstName": "Jane", "lastName": "Smith", 	"company": "Super, Inc"}},
+    { "type": "[Client] Select", "payload": { "id": "1", "firstName": "John", "lastName": "Doe", 	"company": "Acme, Inc"}},
+    { "type": "[Client] Select", "payload": { "id": "2", "firstName": "Jane", "lastName": "Smith", 	"company": "Super, Inc"}},
+    { "type": "[Client] Select", "payload": { "id": "1", "firstName": "John", "lastName": "Doe", 	"company": "Acme, Inc"}},
+    { "type": "[Client] Select", "payload": { "id": "2", "firstName": "Jane", "lastName": "Smith", 	"company": "Super, Inc"}}
+  ]
+}

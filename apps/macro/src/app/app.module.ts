@@ -1,9 +1,12 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@fem/material';
 import { UiToolbarModule } from '@fem/ui-toolbar';
+import { AceEditorModule } from 'ng2-ace-editor';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RoutingModule } from './routing.module';
@@ -74,9 +77,12 @@ import {
     TriggersComponent,
   ],
   imports: [
+    AceEditorModule,
     BrowserAnimationsModule,
     BrowserModule,
+    FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
     RoutingModule,

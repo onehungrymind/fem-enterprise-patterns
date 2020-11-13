@@ -2,6 +2,11 @@ export interface Message {
   message: string;
 }
 
+export interface Action {
+  type: string;
+  payload?: any;
+}
+
 export interface BaseEntity {
   id: string | null;
 }

@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Clients</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item
+        *ngFor="let client of clients"
+        (click)="selected.emit(client)">
+        <h3 mat-line>{{client.firstName}} {{client.lastName}}</h3>
+        <button *ngIf="!readOnly" mat-icon-button (click)="deleted.emit(client);$event.stopPropagation();">
+          <mat-icon>close</mat-icon>
+        </button>
+        <p mat-line>
+          {{client.company}}
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

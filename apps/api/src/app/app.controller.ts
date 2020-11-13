@@ -1,7 +1,5 @@
+import { Action, Message } from '@fem/api-interfaces';
 import { Controller, Get } from '@nestjs/common';
-
-import { Message } from '@fem/api-interfaces';
-
 import { AppService } from './app.service';
 
 @Controller()
@@ -11,5 +9,15 @@ export class AppController {
   @Get('hello')
   getData(): Message {
     return this.appService.getData();
+  }
+
+  @Get('action')
+  getAction(): Action {
+    return this.appService.getAction();
+  }
+
+  @Get('actions')
+  getActions(): Action[] {
+    return this.appService.getActions();
   }
 }

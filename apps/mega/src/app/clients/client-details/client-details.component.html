@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <!--
+    <div *ngIf="currentClient.id">
+      <img mat-card-avatar [src]="currentClient.img" [alt]="currentClient.name"/>
+    </div>
+    -->
+    <mat-card-title>
+      <h1 *ngIf="currentClient.id; else prompt">Editing {{originalName}}</h1>
+      <ng-template #prompt><h1>Create</h1></ng-template>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #formRef="ngForm">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="First Name" required
+               [(ngModel)]="currentClient.firstName" type="text" name="firstName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Last Name" required
+               [(ngModel)]="currentClient.lastName" type="text" name="lastName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Company"
+               [(ngModel)]="currentClient.company" type="text" name="company">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="saved.emit(currentClient)" [disabled]="!formRef.valid">Save</button>
+    <button mat-button (click)="cancelled.emit(currentClient)">Cancel</button>
+  </mat-card-actions>
+</mat-card>

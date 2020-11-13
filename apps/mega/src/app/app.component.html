@@ -1,0 +1,17 @@
+<fem-toolbar (toggleSidenav)="toggleSidenav()">
+</fem-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav
+    [opened]="sidenavStatus === 'opened'"
+    mode="side"
+    class="app-sidenav"
+  >
+    <fem-demo></fem-demo>
+  </mat-sidenav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

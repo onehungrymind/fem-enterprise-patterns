@@ -1,0 +1,87 @@
+<mat-vertical-stepper>
+  <!-- MANUAL STEP -->
+  <mat-step label="MANUAL STEP">
+    <h1>STEP 01: Manual Step</h1>
+    <mat-list>
+      <mat-list-item
+        class="code"
+        *ngFor="let action of actions; index as i"
+        [class.active]="index == i"
+      >
+        {{ action | json }}
+      </mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" (click)="step()">STEP</button>
+  </mat-step>
+  <!-- MANUAL CYCLE -->
+  <mat-step label="MANUAL CYCLE">
+    <h1>STEP 02: Manual Cycle</h1>
+    <p mat-line>Timer: {{ timerInterval / 1000 }} Seconds</p>
+    <mat-slider
+      min="100"
+      max="2000"
+      step="100"
+      value="500"
+      thumb-label="true"
+      [(ngModel)]="timerInterval"
+      class="full-width"
+    >
+    </mat-slider>
+
+    <mat-list>
+      <mat-list-item
+        class="code"
+        *ngFor="let action of actions; index as i"
+        [class.active]="index == i"
+      >
+        {{ action | json }}
+      </mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" (click)="cycle()">CYCLE</button>
+  </mat-step>
+  <!-- DYNAMIC STEP -->
+  <mat-step label="DYNAMIC STEP">
+    <h1>STEP 03: Dynamic Step</h1>
+    <ace-editor [(text)]="action" #stepEditor></ace-editor>
+    <button mat-raised-button color="primary" (click)="fetchSingle()">
+      FETCH
+    </button>
+    <button mat-raised-button color="primary" (click)="dispatch(action)">
+      DISPATCH
+    </button>
+  </mat-step>
+  <!-- DYNAMIC CYCLE -->
+  <mat-step label="DYNAMIC CYCLE">
+    <h1>STEP 04: Dynamic Cycle</h1>
+    <ace-editor [(text)]="rawActions" #cycleEditor></ace-editor>
+    <button mat-raised-button color="primary" (click)="fetchAll()">
+      FETCH
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="dispatchCycle(rawActions)"
+    >
+      DISPATCH
+    </button>
+  </mat-step>
+  <!-- REMOTE STEP
+  <mat-step label="REMOTE STEP">
+    <h1>STEP 05: Remote Step</h1>
+    <form>
+      <ace-editor [(text)]="action" #remoteEditor></ace-editor>
+      <button mat-raised-button color="primary" (click)="fetchSingle()">FETCH</button>
+      <button mat-raised-button color="primary" (click)="dispatchRemote(action)">DISPATCH</button>
+    </form>
+  </mat-step> -->
+  <!-- HISTORY
+  <mat-step label="HISTORY">
+    <h1>History</h1>
+    <button mat-raised-button color="primary" (click)="undo()">UNDO</button>
+    <button mat-raised-button color="primary" (click)="redo()">REDO</button>
+  </mat-step> -->
+  <!-- GRAND FINALE -->
+  <mat-step label="ONE MORE THING...">
+    <img src="assets/make-it-rain.gif" alt="Make it rain!" />
+  </mat-step>
+</mat-vertical-stepper>
