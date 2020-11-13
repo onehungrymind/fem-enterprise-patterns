@@ -1,14 +1,45 @@
-<fem-toolbar (logout)="logout()" (toggleSidenav)="toggleSidenav()">
+<fem-toolbar (toggleSidenav)="toggleSidenav()">
 </fem-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" class="app-sidenav">
-    <fem-demo></fem-demo>
+  <mat-sidenav
+    #sidenav
+    [opened]="sidenavStatus === 'opened'"
+    mode="side"
+    class="app-sidenav"
+  >
+    <ng-container>
+      <span class="logo">
+        <a [routerLink]="'/'">
+          <img src="assets/logo.png" alt="Logo" />
+        </a>
+      </span>
+      <mat-divider></mat-divider>
+      <h1 matSubheader>Concepts</h1>
+      <mat-nav-list>
+        <mat-list-item
+          *ngFor="let concept of concepts"
+          [routerLink]="concept.path"
+          routerLinkActive="active"
+          attr.data-cy="nav-item-{{ concept.name }}"
+        >
+          {{ concept.name | uppercase }}
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-divider></mat-divider>
+      <h1 matSubheader>Examples</h1>
+      <mat-nav-list>
+        <mat-list-item
+          *ngFor="let example of examples"
+          [routerLink]="example.path"
+          routerLinkActive="active"
+          attr.data-cy="nav-item-{{ example.name }}"
+        >
+          {{ example.name | uppercase }}
+        </mat-list-item>
+      </mat-nav-list>
+    </ng-container>
   </mat-sidenav>
-
-  <div class="app-content">
-    <router-outlet></router-outlet>
-  </div>
 
   <div class="container">
     <router-outlet></router-outlet>

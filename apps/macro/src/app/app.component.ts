@@ -51,8 +51,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  logout() {  }
-
   toggleSidenav() {
     this.sidenavStatus =
       this.sidenavStatus === SidenavStatus.OPENED

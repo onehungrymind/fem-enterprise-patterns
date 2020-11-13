@@ -55,6 +55,13 @@
     },
     "ui-toolbar": {
       "tags": []
+    },
+    "mega": {
+      "tags": []
+    },
+    "mega-e2e": {
+      "tags": [],
+      "implicitDependencies": ["mega"]
     }
   }
 }
