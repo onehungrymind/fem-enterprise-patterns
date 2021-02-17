@@ -7,45 +7,30 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
+
 export class HomeComponent {
   price;
   mode;
   widgets: Widget[];
 
-  reCalculateTotal(mode: string, widgets: Widget[], widget: Widget) {
-    this.widgets = this.updateWidgets(mode, widgets, widget);
-    this.price = this.getTotalPrice(widgets);
-  }
-
-  updateWidgets(mode: string, widgets: Widget[], widget: Widget) {
-    switch (mode) {
+  reCalculateTotal(widget: Widget) {
+    switch (this.mode) {
       case 'create':
-        return this.addWidget(widgets, widget);
+        const newWidget = Object.assign({}, widget, { id: uuidv4() });
+        this.widgets = [...this.widgets, newWidget];
+        break;
       case 'update':
-        return this.updateWidget(widgets, widget);
+        this.widgets = this.widgets.map((wdgt) =>
+          widget.id === wdgt.id ? Object.assign({}, widget) : wdgt
+        );
+        break;
       case 'delete':
-        return this.deleteWidget(widgets, widget);
+        this.widgets = this.widgets.filter((wdgt) => widget.id !== wdgt.id);
+        break;
       default:
         break;
     }
-  }
 
-  getTotalPrice(widgets) {
-    return widgets.reduce((acc, curr) => acc + curr.price, 0)
-  }
-
-  addWidget(widgets, widget) {
-    const newWidget = Object.assign({}, widget, { id: uuidv4() });
-    return [...widgets, newWidget];
-  }
-
-  updateWidget(widgets, widget) {
-    return widgets.map((wdgt) =>
-      widget.id === wdgt.id ? Object.assign({}, widget) : wdgt
-    );
-  }
-
-  deleteWidget(widgets, widget) {
-    return widgets.filter((wdgt) => widget.id !== wdgt.id);
+    this.price = this.widgets.reduce((acc, curr) => acc + curr.price, 0);
   }
 }
