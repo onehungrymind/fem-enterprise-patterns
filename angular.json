@@ -78,7 +78,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "apps/macro/tsconfig.app.json",
@@ -116,7 +116,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": ["apps/macro-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/macro-e2e/**/*"]
@@ -160,7 +160,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "apps/api/tsconfig.app.json",
@@ -185,7 +185,7 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "libs/api-interfaces/tsconfig.lib.json",
@@ -276,7 +276,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "apps/micro/tsconfig.app.json",
@@ -314,7 +314,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": ["apps/micro-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/micro-e2e/**/*"]
@@ -395,7 +395,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "apps/meso/tsconfig.app.json",
@@ -433,7 +433,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": ["apps/meso-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/meso-e2e/**/*"]
@@ -448,7 +448,7 @@
       "prefix": "fem",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "libs/material/tsconfig.lib.json",
@@ -478,7 +478,7 @@
       "prefix": "fem",
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "libs/ui-toolbar/tsconfig.lib.json",
@@ -574,7 +574,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": [
               "apps/mega/tsconfig.app.json",
@@ -612,7 +612,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-devkit/build-angular:eslint",
           "options": {
             "tsConfig": ["apps/mega-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/mega-e2e/**/*"]
@@ -627,36 +627,36 @@
   "schematics": {
     "@nrwl/workspace": {
       "library": {
-        "linter": "tslint"
+        "linter": "eslint"
       }
     },
     "@nrwl/cypress": {
       "cypress-project": {
-        "linter": "tslint"
+        "linter": "eslint"
       }
     },
     "@nrwl/node": {
       "application": {
-        "linter": "tslint"
+        "linter": "eslint"
       },
       "library": {
-        "linter": "tslint"
+        "linter": "eslint"
       }
     },
     "@nrwl/nest": {
       "application": {
-        "linter": "tslint"
+        "linter": "eslint"
       },
       "library": {
-        "linter": "tslint"
+        "linter": "eslint"
       }
     },
     "@nrwl/express": {
       "application": {
-        "linter": "tslint"
+        "linter": "eslint"
       },
       "library": {
-        "linter": "tslint"
+        "linter": "eslint"
       }
     },
     "@nrwl/angular:application": {
