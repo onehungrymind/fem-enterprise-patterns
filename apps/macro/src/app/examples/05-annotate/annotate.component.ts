@@ -42,19 +42,13 @@ export class AnnotateComponent implements OnInit {
   lines: Line[] = [];
 
   ngOnInit() {
-    const mouseDown$ = fromEvent(document, 'mousedown');
-    const mouseMove$ = fromEvent(document, 'mousemove');
-    const mouseUp$ = fromEvent(document, 'mouseup');
-
-    mouseDown$
-      .pipe(switchMap(event => mouseMove$
-        .pipe(
-          map((e: MouseEvent) => this.generatePosition(e)),
-          pairwise(),
-          map(([oldPos, newPos]) => this.generateCoordinates(oldPos, newPos)),
-          takeUntil(mouseUp$)
-        )))
-      .subscribe((line: any) => this.lines = [...this.lines, line]);
+    // -------------------------------------------------------------------
+    // CHALLENGE: Annotate over the document
+    // -------------------------------------------------------------------
+    // Create the streams needed to draw a line
+    // Sequence them appropriately
+    // Helper functions have been given to help keep you focused
+    // -------------------------------------------------------------------
   }
 
   generatePosition(e: MouseEvent) {

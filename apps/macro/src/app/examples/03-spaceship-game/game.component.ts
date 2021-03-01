@@ -75,20 +75,29 @@ export class GameComponent implements OnInit, OnDestroy {
       )
       .subscribe(shot => this.shots = [...this.shots, shot]);
 
-    this.leftArrow$ = fromEvent(document, 'keydown').pipe(
-      filter((event: KeyboardEvent) => event.key === 'ArrowLeft'),
-      mapTo(position => this.decrement(position, 'x', 10))
-    );
+    // -------------------------------------------------------------------
+    // CHALLENGE: Ready Player?
+    // -------------------------------------------------------------------
+    // Complete the leftArrow$ stream to capture the correct keystroke
+    // Complete the rightArrow$ stream to capture the correct keystroke
+    // Complete the leftArrow$ stream to pass the appropriate value
+    // Complete the rightArrow$ stream to pass the appropriate value
+    // Add a scan function to act on the stream data in the merge operator
+    // -------------------------------------------------------------------
+    this.leftArrow$ = fromEvent(document, 'keydown')
+      .pipe(
+        // SOMETHING GOES HERE!
+      );
 
-    this.rightArrow$ = fromEvent(document, 'keydown').pipe(
-      filter((event: KeyboardEvent) => event.key === 'ArrowRight'),
-      mapTo(position => this.increment(position, 'x', 10))
-    );
+    this.rightArrow$ = fromEvent(document, 'keydown')
+      .pipe(
+        // SOMETHING GOES HERE!
+      );
 
     merge(this.leftArrow$, this.rightArrow$)
       .pipe(
         startWith(this.shipPosition),
-        scan((acc, curr: Function) => curr(acc))
+        // SOMETHING GOES HERE!
       )
       .subscribe(position => this.shipPosition = position);
   }
