@@ -39,3 +39,11 @@ The `serve:all` command is a convenience methods that runs the `serve:api` and `
 ```
 
 > Note: the above terminal commands are for Mac. Remember to substitute the appropriate commands for your OS.
+
+## Challenges
+
+If you want to follow along with the challenges, you can check out the `start` branch to see the code without solutions. 
+
+```
+git checkout start
+```
