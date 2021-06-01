@@ -1,6 +1,6 @@
-# Enteprise Patterns Course
+# Enterprise Patterns Course
 
-This is the sample project for the Enteprise Patterns course for Frontend Masters.
+This is the sample project for the Enterprise Patterns course for Frontend Masters.
 
 ## Prerequisites
 
