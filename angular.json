@@ -21,7 +21,10 @@
             "polyfills": "apps/macro/src/polyfills.ts",
             "tsConfig": "apps/macro/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/macro/src/favicon.ico", "apps/macro/src/assets"],
+            "assets": [
+              "apps/macro/src/favicon.ico",
+              "apps/macro/src/assets"
+            ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/macro/src/styles.scss"
@@ -85,7 +88,10 @@
               "apps/macro/tsconfig.spec.json",
               "apps/macro/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/macro/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/macro/**/*"
+            ]
           }
         },
         "test": {
@@ -118,8 +124,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/macro-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/macro-e2e/**/*"]
+            "tsConfig": [
+              "apps/macro-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/macro-e2e/**/*"
+            ]
           }
         }
       }
@@ -137,7 +148,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -166,7 +179,10 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/**/*"
+            ]
           }
         },
         "test": {
@@ -191,7 +207,10 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api-interfaces/**/*"
+            ]
           }
         },
         "test": {
@@ -223,8 +242,13 @@
             "polyfills": "apps/micro/src/polyfills.ts",
             "tsConfig": "apps/micro/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/micro/src/favicon.ico", "apps/micro/src/assets"],
-            "styles": ["apps/micro/src/styles.scss"],
+            "assets": [
+              "apps/micro/src/favicon.ico",
+              "apps/micro/src/assets"
+            ],
+            "styles": [
+              "apps/micro/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -283,7 +307,10 @@
               "apps/micro/tsconfig.spec.json",
               "apps/micro/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/micro/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/micro/**/*"
+            ]
           }
         },
         "test": {
@@ -316,8 +343,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/micro-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/micro-e2e/**/*"]
+            "tsConfig": [
+              "apps/micro-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/micro-e2e/**/*"
+            ]
           }
         }
       }
@@ -342,8 +374,13 @@
             "polyfills": "apps/meso/src/polyfills.ts",
             "tsConfig": "apps/meso/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/meso/src/favicon.ico", "apps/meso/src/assets"],
-            "styles": ["apps/meso/src/styles.scss"],
+            "assets": [
+              "apps/meso/src/favicon.ico",
+              "apps/meso/src/assets"
+            ],
+            "styles": [
+              "apps/meso/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -402,7 +439,10 @@
               "apps/meso/tsconfig.spec.json",
               "apps/meso/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/meso/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/meso/**/*"
+            ]
           }
         },
         "test": {
@@ -435,8 +475,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/meso-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/meso-e2e/**/*"]
+            "tsConfig": [
+              "apps/meso-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/meso-e2e/**/*"
+            ]
           }
         }
       }
@@ -454,7 +499,10 @@
               "libs/material/tsconfig.lib.json",
               "libs/material/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/material/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/material/**/*"
+            ]
           }
         },
         "test": {
@@ -484,7 +532,10 @@
               "libs/ui-toolbar/tsconfig.lib.json",
               "libs/ui-toolbar/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui-toolbar/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-toolbar/**/*"
+            ]
           }
         },
         "test": {
@@ -521,8 +572,13 @@
             "polyfills": "apps/mega/src/polyfills.ts",
             "tsConfig": "apps/mega/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/mega/src/favicon.ico", "apps/mega/src/assets"],
-            "styles": ["apps/mega/src/styles.scss"],
+            "assets": [
+              "apps/mega/src/favicon.ico",
+              "apps/mega/src/assets"
+            ],
+            "styles": [
+              "apps/mega/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -581,7 +637,10 @@
               "apps/mega/tsconfig.spec.json",
               "apps/mega/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/mega/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/mega/**/*"
+            ]
           }
         },
         "test": {
@@ -614,15 +673,21 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/mega-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/mega-e2e/**/*"]
+            "tsConfig": [
+              "apps/mega-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/mega-e2e/**/*"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "d99d8621-c1f8-47af-91dc-29190075c64a"
   },
   "schematics": {
     "@nrwl/workspace": {
