@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+{
+  "name": "fem-enterprise-patterns",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/fem-enterprise-patterns",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "angular.ng-template",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "esbenp.prettier-vscode",
+        "firsttris.vscode-jest-runner",
+        "streetsidesoftware.code-spell-checker",
+      ]
+    }
+  },
+  "features": {
+  },
+  "mounts": [
+    "source=fem-enterprise-patterns-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/node/.gitconfig,type=bind"
+
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3100, 4200, 4300, 4400, 4500],
+  "postCreateCommand": "yarn",
+  "remoteEnv": {}
+}
